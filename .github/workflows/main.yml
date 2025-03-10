@@ -1,0 +1,5 @@
+name: Build
+on: [push]
+steps:
+  - name: Checkout
+    uses: actions/checkout@v2
