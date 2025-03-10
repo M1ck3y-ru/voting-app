@@ -1,0 +1,24 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "ubuntu:latest",
+      "commit": true
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "playbook.yml"
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "myrepo/voting-app",
+        "tag": "latest"
+      }
+    ]
+  ]
+}
